@@ -1,6 +1,9 @@
 const express = require ('express');
 const mongoose = require('mongoose');
 const requireDir = require('require-dir');
+const basicAuth = require('express-basic-auth');
+
+
 
 
 //iniciando a aplicação
