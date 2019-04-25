@@ -6,13 +6,13 @@ const requireDir = require('require-dir');
 //iniciando a aplicação
 const app = express();
 //permitir o envio de dados no formato json
-app.use(express.json());
+app.use(express.json(), basicAuth({
+    users:{
+        'admin': 'secret'
+    }
+}));
 
-// , basicAuth({
-//     users:{
-//         'admin': 'secret'
-//     }
-// })
+
 
 //iniciando o db
 mongoose.connect('mongodb://localhost:27017/fortsBrasil', {useNewUrlParser: true});
